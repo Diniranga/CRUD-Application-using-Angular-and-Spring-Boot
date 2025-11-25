@@ -1,13 +1,21 @@
 <h3>View Employee Details</h3>
 
-<div>
+<div *ngIf="isLoading">
+  <p>Loading employee details...</p>
+</div>
+
+<div *ngIf="!isLoading && employee.id">
   <div>
-    <label><b>First Name : </b>{{employee.firstname}}</label>
+    <label><b>First Name:</b> {{ employee.firstname }}</label>
   </div>
   <div>
-    <label><b>Last Name : </b>{{employee.lastname}}</label>
+    <label><b>Last Name:</b> {{ employee.lastname }}</label>
   </div>
   <div>
-    <label><b>E-Mail : </b>{{employee.emailID}}</label>
+    <label><b>E-Mail:</b> {{ employee.emailID }}</label>
   </div>
+</div>
+
+<div *ngIf="!isLoading && !employee.id">
+  <p>Employee not found.</p>
 </div>

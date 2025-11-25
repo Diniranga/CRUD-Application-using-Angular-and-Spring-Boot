@@ -4,15 +4,20 @@ import {EmployeeService} from "../employee.service";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-create-employee',
-  templateUrl: './create-employee.component.html',
-  styleUrls: ['./create-employee.component.css']
+    selector: 'app-create-employee',
+    templateUrl: './create-employee.component.html',
+    styleUrls: ['./create-employee.component.css'],
+    standalone: false
 })
 export class CreateEmployeeComponent implements OnInit {
 
-
-  // @ts-ignore
-  employee: Employee = new Employee();
+  employee: Employee = {
+    id: undefined,
+    firstname: '',
+    lastname: '',
+    emailID: ''
+  };
+  
   constructor(private employeeService:EmployeeService,
               private router:Router) { }
 

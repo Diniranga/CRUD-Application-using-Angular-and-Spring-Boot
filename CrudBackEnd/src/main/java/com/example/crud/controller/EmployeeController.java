@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/")
 
 
@@ -44,7 +44,7 @@ public class EmployeeController {
 
         emp.setFirstname(emp_details.getFirstname());
         emp.setLastname(emp_details.getLastname());
-        emp.setEmailID(emp.getEmailID());
+        emp.setEmailID(emp_details.getEmailID());
 
         Employee updated_employee = emp_repo.save(emp);
         return ResponseEntity.ok(updated_employee);

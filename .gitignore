@@ -1,0 +1,71 @@
+#---------------------------------------
+# Global ignores for this monorepo
+# Covers both CrudBackEnd (Spring Boot)
+# and CrudFrontEnd (Angular)
+#---------------------------------------
+
+# OS / Editor cruft
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.suo
+*.ntvs*
+*.sw?
+
+# Logs & temp files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.pid
+*.seed
+*.pid.lock
+tmp/
+
+# Environment / secrets
+.env
+.env.*
+
+# Node / Angular artifacts
+**/node_modules/
+**/.angular/cache/
+**/dist/
+**/tmp/
+**/out-tsc/
+**/bazel-out/
+coverage/
+libpeerconnection.log
+testem.log
+
+# Maven / Java artifacts
+**/target/
+**/build/
+!.mvn/wrapper/maven-wrapper.jar
+*.class
+hs_err_pid*
+
+# IDE specific (Eclipse / STS / NetBeans)
+.classpath
+.project
+.settings/
+.factorypath
+.sts4-cache
+.apt_generated/
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# IntelliJ modules created at root
+CrudFrontEnd.iml
+
+# Angular cache metadata
+.angular/cache/
+
+

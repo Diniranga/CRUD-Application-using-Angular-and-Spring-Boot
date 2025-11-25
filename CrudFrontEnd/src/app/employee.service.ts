@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Observable, observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import { HttpClient } from "@angular/common/http";
 import {Employee} from "./employee";
 
 
@@ -15,8 +15,7 @@ export class EmployeeService {
 
 
 
-  // @ts-ignore
-  getEmployeeList(): observable<Employee[]>{
+  getEmployeeList(): Observable<Employee[]>{
       return this.httpclient.get<Employee[]>(`${this.baseURL}`);
   }
 
@@ -24,15 +23,15 @@ export class EmployeeService {
     return this.httpclient.post(`${this.baseURL}`,emp);
   }
 
-  getEmployeebyID(id: Number | undefined):Observable<Employee>{
+  getEmployeebyID(id: number | undefined):Observable<Employee>{
     return this.httpclient.get<Employee>(`${this.baseURL}/${id}`);
   }
 
-  updateEmployee(id: Number | undefined, emp: Employee):Observable<Object>{
+  updateEmployee(id: number | undefined, emp: Employee):Observable<Object>{
     return this.httpclient.put(`${this.baseURL}/${id}`,emp);
   }
 
-  deleteEmployee(id:Number):Observable<Object>{
+  deleteEmployee(id: number | undefined):Observable<Object>{
     return this.httpclient.delete(`${this.baseURL}/${id}`);
   }
 
